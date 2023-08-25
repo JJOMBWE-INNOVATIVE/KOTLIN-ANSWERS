@@ -3,7 +3,17 @@
     <style name="Base.Theme.RecyclerViews" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/Action_bar_color</item>
+       <!-- <item name="android:statusBarColor">@color/Action_bar_color</item> -->
+       <!-- <item name="colorPrimaryDark">@color/Action_bar_color</item> -->
     </style>
 
     <style name="Theme.RecyclerViews" parent="Base.Theme.RecyclerViews" />
+    
+    <style name="Theme.Main" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/Action_bar_color</item>
+    </style>
+    
+    
+    
 </resources>

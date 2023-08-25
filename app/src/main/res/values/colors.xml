@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Status_Bar_color">#DB48F4</color>
+    <color name="Action_bar_color">#6510C4</color>
+    <color name="CardColor">#FF5733</color>
+    <color name="TextColor">#FFFFFFFF</color>
+    <color name="Constraint">#FFC107</color>
+
 </resources>

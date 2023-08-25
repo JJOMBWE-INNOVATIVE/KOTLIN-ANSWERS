@@ -1,4 +1,6 @@
-package ICI.recyclerviews
+package ICI.recyclerviews.data
+
+import ICI.recyclerviews.data.ActivityStatus
 
 data class ActivityModel (
     val image: Int = 1,
@@ -6,5 +8,5 @@ data class ActivityModel (
     val activityTime: String = "",
     var activityDigit: String = "",
     val activityDescription: String = "",
-    val activityStatus:ActivityStatus = ActivityStatus.Completed
+    val activityStatus: ActivityStatus = ActivityStatus.Completed
 )
