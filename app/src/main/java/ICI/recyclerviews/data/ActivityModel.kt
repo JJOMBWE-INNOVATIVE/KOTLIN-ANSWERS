@@ -8,5 +8,6 @@ data class ActivityModel (
     val activityTime: String = "",
     var activityDigit: String = "",
     val activityDescription: String = "",
-    val activityStatus: ActivityStatus = ActivityStatus.Completed
+    val activityStatus: ActivityStatus = ActivityStatus.Completed,
+    val floatActionButton : Int = 1
 )

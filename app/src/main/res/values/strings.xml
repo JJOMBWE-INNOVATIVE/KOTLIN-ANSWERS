@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Recycler views</string>
     <string name="todo">TODO</string>
+    <string name="Description">*DESCRIPTION*\n Waking up is the gentle transition from the realm of dreams to the world of reality.
+        \nIt marks the start of a new day, offering a fresh canvas to embrace life
+        \'s opportunities. It\'waking up symbolizes a chance for a new beginning.</string>
+    <string name="ActivityStatus">Activity Status:\ncompleted</string>
+    <string name="Upload">Click\nto upload\nphoto</string>
+
 </resources>
