@@ -16,7 +16,17 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val image = intent.getIntExtra("activityImage",R.drawable.wakeup)
+        val one = intent.getIntExtra("activityImage",R.drawable.wakeup)
+        val two = intent.getIntExtra("activityImage",R.drawable.pray)
+        val three = intent.getIntExtra("activityImage",R.drawable.breakfast)
+        val four = intent.getIntExtra("activityImage",R.drawable.jogging)
+        val five = intent.getIntExtra("activityImage",R.drawable.work)
+        val six = intent.getIntExtra("activityImage",R.drawable.movie)
+        val seven = intent.getIntExtra("activityImage",R.drawable.cook)
+        val eight = intent.getIntExtra("activityImage",R.drawable.dinner)
+        val nine = intent.getIntExtra("activityImage",R.drawable.pray)
+        val ten = intent.getIntExtra("activityImage",R.drawable.sleep)
+
         val name = intent.getStringExtra("activityName")
         val time = intent.getStringExtra("activityTime")
         val digit = intent.getStringExtra("activityDigit")
@@ -26,7 +36,7 @@ class DetailsActivity : AppCompatActivity() {
 
 //        Log.d("Serializable","$serializable")
         val imageIcon = binding.DescriptionImage
-        imageIcon.setImageResource(image)
+        imageIcon.setImageResource(one)
 
         val myActivity = binding.Activity
         myActivity.text = name

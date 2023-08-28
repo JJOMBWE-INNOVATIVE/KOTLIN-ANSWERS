@@ -50,7 +50,6 @@ class ActivityAdapter(var context:Context, var list: ArrayList<ActivityModel>): 
             intent.putExtra("activityDigit",list[position].activityDigit)
             intent.putExtra("activityDescription",list[position].activityDescription)
             intent.putExtra("activityStatus",list[position].activityStatus)
-            //intent.putExtra("activityStatus",list[position].activityStatus)
             intent.putExtra("activityStatus",list[position].activityStatus)
             context.startActivity(intent)
         }

@@ -30,6 +30,7 @@ class FloatAction : AppCompatActivity() {
         val binding = ActivityFloatActionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // for image upload
         button = binding.buttonToUpload
         image = binding.UploadImage
 
@@ -37,7 +38,7 @@ class FloatAction : AppCompatActivity() {
             pickImageGalery()
             /*Press Alt + Enter*/
         }
-
+        // for date
         myDate = binding.Date
         myDatePicker = binding.DatePicker
 
