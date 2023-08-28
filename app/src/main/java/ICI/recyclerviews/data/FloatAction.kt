@@ -14,15 +14,11 @@ import java.util.Locale
 
 class FloatAction : AppCompatActivity() {
 
-  private  lateinit var button : Button
-  private  lateinit var image : ImageView
-
-         private lateinit var myDate : TextView
-          private  lateinit var myDatePicker : Button
-
-    companion object{
-        val Image_Request_code = 100
-    }
+    private lateinit var button: Button
+    private lateinit var image: ImageView
+    private lateinit var myDate: TextView
+    private lateinit var myDatePicker: Button
+    private val Image_Request_code = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,58 +26,48 @@ class FloatAction : AppCompatActivity() {
         val binding = ActivityFloatActionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // for image upload
+        // Initialize UI elements
         button = binding.buttonToUpload
         image = binding.UploadImage
-
-        button.setOnClickListener {
-            pickImageGalery()
-            /*Press Alt + Enter*/
-        }
-        // for date
         myDate = binding.Date
         myDatePicker = binding.DatePicker
 
-        val myCalender = Calendar.getInstance()
-        DatePickerDialog.OnDateSetListener { datePicker, year, month, dayOfMonth ->
-            myCalender.set(Calendar.YEAR,year)
-            myCalender.set(Calendar.MONTH,month)
-            myCalender.set(Calendar.DAY_OF_MONTH,dayOfMonth)
-            updatelable(myCalender)
+        // Set an onClickListener for the "Upload" button
+        button.setOnClickListener {
+            pickImageFromGallery()
         }
 
+        // Set an onClickListener for the date picker button
         myDatePicker.setOnClickListener {
-            val datePicker = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
-                myCalender.set(Calendar.YEAR, year)
-                myCalender.set(Calendar.MONTH, month)
-                myCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                updateLabel()
-            }
+            showDatePicker()
+        }
+    }
 
-            DatePickerDialog(
-                this,
-                datePicker,
-                myCalender.get(Calendar.YEAR),
-                myCalender.get(Calendar.MONTH),
-                myCalender.get(Calendar.DAY_OF_MONTH)
-            ).show()
+    private fun showDatePicker() {
+        val myCalendar = Calendar.getInstance()
+        val datePicker = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
+            myCalendar.set(Calendar.YEAR, year)
+            myCalendar.set(Calendar.MONTH, month)
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            updateLabel(myCalendar)
         }
 
-
+        DatePickerDialog(
+            this,
+            datePicker,
+            myCalendar.get(Calendar.YEAR),
+            myCalendar.get(Calendar.MONTH),
+            myCalendar.get(Calendar.DAY_OF_MONTH)
+        ).show()
     }
 
-    private fun updateLabel() {
-
-    }
-
-    private fun updatelable(myCalender: Calendar) {
+    private fun updateLabel(myCalendar: Calendar) {
         val myFormat = "dd-MM-yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.UK)
-        myDatePicker.text =  sdf.format(myCalender.time)
-
+        myDate.text = sdf.format(myCalendar.time)
     }
 
-    private fun pickImageGalery() {
+    private fun pickImageFromGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, Image_Request_code)
@@ -89,13 +75,9 @@ class FloatAction : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == Image_Request_code && requestCode == RESULT_OK){
+        if (requestCode == Image_Request_code && resultCode == RESULT_OK) {
+            // Set the selected image to the ImageView
             image.setImageURI(data?.data)
         }
-
     }
-
 }
-
-
-
